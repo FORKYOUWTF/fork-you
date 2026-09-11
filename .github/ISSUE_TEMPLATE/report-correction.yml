@@ -1,0 +1,33 @@
+name: Report a correction
+description: Flag an outdated link, inaccurate claim, or change to a directory listing.
+title: '[Correction] '
+labels: ['documentation']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help keep the directory accurate. Corrections are reviewed before the site is updated.
+        This report will be public. Share public sources and avoid personal contact details.
+  - type: input
+    id: listing
+    attributes:
+      label: Listing or page to correct
+      placeholder: Organization name, or the affected page URL
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What needs correcting?
+      description: Identify the current claim or link and explain what should change. If a link is broken, include the broken URL.
+      placeholder: What is wrong, and what would be more accurate?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Official sources or evidence
+      description: Link to the official page supporting the correction. For a broken link, describe the error and include a replacement URL if you found one.
+      placeholder: URLs and the relevant evidence
+    validations:
+      required: true

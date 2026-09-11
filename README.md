@@ -49,6 +49,13 @@ FORK_YOU_PAGES_BASE_PATH='' npm run check:pages
 
 Profiles are maintained in `lib/directory.ts`. Entries include official source links, governance context, participation routes, and review dates. Update review dates only after checking the sources. Paid-work routes are labeled separately from unpaid contribution and volunteering.
 
+## Help improve the directory
+
+- [Suggest a project](https://github.com/FORKYOUWTF/fork-you/issues/new?template=suggest-project.yml) with official sources and a practical way to get involved.
+- [Report a correction](https://github.com/FORKYOUWTF/fork-you/issues/new?template=report-correction.yml) with the affected listing, the proposed change, and supporting evidence.
+
+Submissions are public and require a GitHub account. Suggestions and corrections are reviewed against the [listing standards](https://forkyou.wtf/#standards) before publication. Each listing's “Why them?” panel also has a correction link that fills in its name.
+
 ## License
 
 No project license has been selected. Public visibility alone does not grant an open-source license.

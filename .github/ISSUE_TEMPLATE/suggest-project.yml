@@ -1,0 +1,63 @@
+name: Suggest a project
+description: Suggest a project, company, cooperative, or public-interest organization for the directory.
+title: '[Suggestion] '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Know a place worth putting our skills into? Help us check it out.
+        This submission will be public. Share public sources and avoid personal contact details.
+        Suggestions are reviewed against [our listing standards](https://forkyou.wtf/#standards) before publication.
+  - type: input
+    id: organization
+    attributes:
+      label: Project or organization name
+      placeholder: The name people should look for
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Official website
+      placeholder: https://example.org
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Organization type
+      options:
+        - Open-source project
+        - Company or cooperative
+        - Nonprofit or public-interest organization
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why it belongs, with official sources
+      description: Explain its open-source work, shared ownership, or public-interest mission. Link to the relevant license, governance information, or mission statement.
+      placeholder: What makes this a useful alternative, and where can we verify it?
+    validations:
+      required: true
+  - type: input
+    id: participation
+    attributes:
+      label: Official way to get involved
+      description: Link to a contribution guide, careers page, or volunteer page that a visitor can act on.
+      placeholder: https://example.org/contribute
+    validations:
+      required: true
+  - type: dropdown
+    id: routes
+    attributes:
+      label: What does that participation page offer?
+      description: Select all that apply. A careers page does not establish that a vacancy is open today.
+      multiple: true
+      options:
+        - Open-source contribution (may be unpaid)
+        - Paid-work route
+        - Volunteering (unpaid)
+    validations:
+      required: true

@@ -178,6 +178,8 @@ main > section:not(.intro) {
 }
 .site-header nav {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 24px;
   align-items: center;
 }
@@ -478,6 +480,28 @@ h2 {
   font-size: 0.8rem;
   line-height: 1.7;
 }
+.community {
+  padding-top: 12px;
+}
+.community > p {
+  margin: 0 0 18px;
+}
+.community-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-bottom: 14px;
+}
+.community .submission-note,
+.detail-body .submission-note {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.correction-link {
+  margin-top: 14px;
+}
 .empty-state {
   text-align: center;
   padding: 38px 20px;
@@ -552,10 +576,11 @@ footer p {
 footer p a {
   text-decoration: underline;
 }
-footer > a:last-child {
+.footer-link {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  min-height: 44px;
   text-decoration: underline;
 }
 
@@ -674,9 +699,13 @@ footer > a:last-child {
     gap: 12px;
     min-height: 72px;
     font-size: 0.72rem;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 18px 8px;
   }
   .site-header nav {
-    gap: 14px;
+    justify-content: flex-start;
+    gap: 0 18px;
   }
   .site-header .wordmark svg {
     display: none;

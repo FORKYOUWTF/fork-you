@@ -37,6 +37,11 @@ import {
   type Organization,
 } from '@/lib/directory';
 import { registerDirectoryTools } from '@/lib/webmcp';
+import {
+  repositoryUrl,
+  suggestProjectUrl,
+  reportCorrectionUrl,
+} from '@/lib/community';
 
 function OrganizationCard({
   organization: org,
@@ -147,6 +152,19 @@ function OrganizationCard({
                 employer or an endorsement of our manifesto by this
                 organization.
               </p>
+              <a
+                className="action-link correction-link"
+                href={reportCorrectionUrl(org.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Report a correction for ${org.name} on GitHub`}
+              >
+                Report a correction
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+              <p className="submission-note">
+                Public GitHub form. Sign-in required.
+              </p>
             </div>
           </SheetContent>
         </Sheet>
@@ -200,6 +218,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#manifesto">Why we’re here</a>
           <a href="#directory">Find your people</a>
+          <a href="#contribute">Help build the list</a>
         </nav>
       </header>
       <main>
@@ -409,6 +428,39 @@ export default function Home() {
           </p>
         </section>
         <section
+          className="community"
+          id="contribute"
+          aria-labelledby="community-heading"
+        >
+          <h2 id="community-heading">The list needs your people.</h2>
+          <p>
+            Know a project we missed? Spotted something out of date? Help make
+            this directory more useful, with sources to back it up.
+          </p>
+          <div className="community-actions">
+            <a
+              className="jump-link"
+              href={suggestProjectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Suggest a project <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+            <a
+              className="action-link"
+              href={reportCorrectionUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Report a correction <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+          </div>
+          <p className="submission-note">
+            Opens a public GitHub form. A GitHub account is required. We review
+            suggestions and corrections before updating the list.
+          </p>
+        </section>
+        <section
           className="standards"
           id="standards"
           aria-labelledby="standards-heading"
@@ -465,7 +517,15 @@ export default function Home() {
         <a className="wordmark" href="#top">
           FORK YOU<span className="wordmark-dot">.</span>
         </a>
-        <a href="#directory">
+        <a
+          className="footer-link"
+          href={repositoryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitFork size={17} aria-hidden="true" /> Fork this site
+        </a>
+        <a className="footer-link" href="#directory">
           Back to the directory <ArrowUpRight size={17} aria-hidden="true" />
         </a>
       </footer>
