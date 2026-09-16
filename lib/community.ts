@@ -1,6 +1,7 @@
 export const repositoryUrl = 'https://github.com/FORKYOUWTF/fork-you';
 
 export const suggestProjectUrl = `${repositoryUrl}/issues/new?template=suggest-project.yml`;
+export const suggestStoryUrl = `${repositoryUrl}/issues/new?template=suggest-story.yml`;
 
 export function reportCorrectionUrl(listing?: string) {
   const url = new URL(`${repositoryUrl}/issues/new`);

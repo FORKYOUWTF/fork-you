@@ -1,0 +1,31 @@
+name: Suggest a news story
+description: Bring a sourced story about frontier AI, concentrated power, or open alternatives.
+title: '[News] '
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us follow the story, with evidence. Suggestions are reviewed before publication.
+        This issue is public. Do not include private messages, personal contact details, or confidential material.
+  - type: input
+    id: story
+    attributes:
+      label: Story or headline
+      description: What happened, and when?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source links
+      description: Link to original statements, documents, or reliable reporting. Include publication dates and any relevant response or correction.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why it matters
+      description: Explain the connection to power, ownership, research, work, or open alternatives. Separate established facts from allegations and your interpretation.
+    validations:
+      required: true

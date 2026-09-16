@@ -11,6 +11,7 @@ Website: [forkyou.wtf](https://forkyou.wtf)
 - Search 18 curated profiles by name, cause, or skill.
 - Filter by organization type and contribution, careers, or volunteer routes.
 - Read governance context, official sources, and review dates.
+- Follow dated news briefs with linked evidence, disputed claims, company responses, and clearly labeled editorial views.
 - Use a responsive interface with keyboard-accessible controls and reduced-motion support.
 
 The directory links to official participation pages. A careers page does not imply a current vacancy, and inclusion does not imply endorsement.
@@ -55,6 +56,14 @@ Profiles are maintained in `lib/directory.ts`. Entries include official source l
 - [Report a correction](https://github.com/FORKYOUWTF/fork-you/issues/new?template=report-correction.yml) with the affected listing, the proposed change, and supporting evidence.
 
 Submissions are public and require a GitHub account. Suggestions and corrections are reviewed against the [listing standards](https://forkyou.wtf/#standards) before publication. Each listing's “Why them?” panel also has a correction link that fills in its name.
+
+## News briefs
+
+The [news section](https://forkyou.wtf/#news) is maintained in `lib/news.ts`. Each brief includes an event date, a source-review date in UTC, context linked to individual sources, and a separate editorial view. Source types distinguish first-party statements, reporting, and opinion. Briefs are manually reviewed; the site does not fetch or publish headlines automatically.
+
+When adding or updating a story, read the original material, check for subsequent responses or corrections, and preserve the distinction between facts, allegations, and motives that have not been established. Write original summaries, quote sparingly, and link to the full source. Update `reviewedAt` only after checking the sources. Keep stable story IDs for existing links, list newer events first, and explain substantive corrections in the brief.
+
+[Suggest a story](https://github.com/FORKYOUWTF/fork-you/issues/new?template=suggest-story.yml) with evidence. Every brief also links to a correction form. These forms are public and require a GitHub account.
 
 ## License
 

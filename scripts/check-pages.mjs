@@ -3,6 +3,7 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { organizations } from '../lib/directory.ts';
+import { newsStories } from '../lib/news.ts';
 
 const basePath = process.env.FORK_YOU_PAGES_BASE_PATH ?? '/fork-you';
 const root = path.resolve('out');
@@ -35,6 +36,13 @@ try {
   );
   for (const organization of organizations)
     assert.ok(html.includes(organization.name), organization.name);
+  assert.ok(html.includes('id="news"'), 'News section is exported');
+  for (const story of newsStories) {
+    assert.ok(html.includes(`id="${story.id}"`), 'Story has a stable anchor');
+    assert.ok(html.includes(story.status), 'Claim status is exported');
+    for (const source of story.sources)
+      assert.ok(html.includes(source.url), 'Source link is exported');
+  }
   assert.ok(!html.includes('noindex'));
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
   assert.ok(canonical, 'Canonical URL is present');
@@ -63,7 +71,7 @@ try {
   );
   assert.equal((await fetch(`${origin}${basePath}/missing-page`)).status, 404);
   console.log(
-    `Pages HTTP checks passed: ${organizations.length} profiles, canonical, ${assets.length} assets, metadata, and missing-page status.`,
+    `Pages HTTP checks passed: ${organizations.length} profiles, ${newsStories.length} news briefs and their sources, canonical, ${assets.length} assets, metadata, and missing-page status.`,
   );
 } finally {
   await new Promise((resolve, reject) =>

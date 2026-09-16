@@ -37,6 +37,7 @@ import {
   type Organization,
 } from '@/lib/directory';
 import { registerDirectoryTools } from '@/lib/webmcp';
+import { NewsSection } from '@/components/news-section';
 import {
   repositoryUrl,
   suggestProjectUrl,
@@ -216,6 +217,7 @@ export default function Home() {
           FORK YOU<span className="wordmark-dot">.</span>
         </a>
         <nav aria-label="Main navigation">
+          <a href="#news">News</a>
           <a href="#manifesto">Why we’re here</a>
           <a href="#directory">Find your people</a>
           <a href="#contribute">Help build the list</a>
@@ -239,6 +241,7 @@ export default function Home() {
             <ArrowDown size={17} aria-hidden="true" />
           </a>
         </section>
+        <NewsSection />
         <section
           className="manifesto"
           id="manifesto"
