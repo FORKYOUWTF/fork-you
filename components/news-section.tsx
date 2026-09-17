@@ -80,10 +80,16 @@ export function NewsSection() {
                         <ArrowUpRight size={15} aria-hidden="true" />
                       </a>
                       <span>
-                        {source.kind} ·{' '}
-                        <time dateTime={source.publishedAt}>
-                          {formatNewsDate(source.publishedAt)}
-                        </time>
+                        {source.kind}
+                        {source.publishedAt && (
+                          <>
+                            {' '}
+                            ·{' '}
+                            <time dateTime={source.publishedAt}>
+                              {formatNewsDate(source.publishedAt)}
+                            </time>
+                          </>
+                        )}
                       </span>
                     </li>
                   ))}

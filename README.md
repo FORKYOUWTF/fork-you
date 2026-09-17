@@ -61,6 +61,8 @@ Submissions are public and require a GitHub account. Suggestions and corrections
 
 The [news section](https://forkyou.wtf/#news) is maintained in `lib/news.ts`. Each brief includes an event date, a source-review date in UTC, context linked to individual sources, and a separate editorial view. Source types distinguish first-party statements, reporting, and opinion. Briefs are manually reviewed; the site does not fetch or publish headlines automatically.
 
+Source publication dates are optional for living documents such as policy FAQs that do not display a fixed date. Their review date is recorded on the brief; do not invent a publication date from a relative “updated” label.
+
 When adding or updating a story, read the original material, check for subsequent responses or corrections, and preserve the distinction between facts, allegations, and motives that have not been established. Write original summaries, quote sparingly, and link to the full source. Update `reviewedAt` only after checking the sources. Keep stable story IDs for existing links, list newer events first, and explain substantive corrections in the brief.
 
 [Suggest a story](https://github.com/FORKYOUWTF/fork-you/issues/new?template=suggest-story.yml) with evidence. Every brief also links to a correction form. These forms are public and require a GitHub account.

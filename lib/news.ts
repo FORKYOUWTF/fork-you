@@ -3,7 +3,7 @@ export type NewsSource = {
   label: string;
   url: string;
   kind: 'Primary source' | 'Reporting' | 'Opinion';
-  publishedAt: string;
+  publishedAt?: string;
 };
 
 export type NewsStory = {
@@ -24,6 +24,81 @@ export type NewsStory = {
 };
 
 export const newsStories: NewsStory[] = [
+  {
+    id: 'openai-project-lily-chat-review',
+    title: 'Project Lily: the people reading ChatGPT conversations.',
+    topic: 'Privacy & data work',
+    eventDate: '2026-09-14',
+    reviewedAt: '2026-09-17',
+    summary:
+      '404 Media reports that OpenAI contractors review real ChatGPT conversations, sometimes containing sensitive information. OpenAI’s consumer FAQ permits limited human access for model improvement and other specified purposes.',
+    status: 'Reported practice',
+    context: [
+      {
+        label: 'The original investigation',
+        text: 'Joseph Cox’s September 14 report describes hundreds of contractors rating chatbot replies under Project Lily. It cites internal documents and real prompts seen by 404 Media. The work aims to improve responses, including reducing excessive agreement with users and claims of human-like experiences.',
+        sources: ['404-media'],
+      },
+      {
+        label: 'More than a single prompt',
+        text: 'Tom’s Hardware’s follow-up, citing 404 Media, describes reviewers receiving conversations and a user-memory summary that may include personal context such as location. This is coverage of the same investigation, rather than a separate set of leaked evidence.',
+        sources: ['toms-hardware'],
+      },
+      {
+        label: 'OpenAI’s response and disclosures',
+        text: '404 Media reports that reviewers do not see usernames; OpenAI says it tries to remove personal details but acknowledges some can get through. The company’s consumer FAQ says authorized staff and service providers may access content for abuse investigations, support, legal matters, or model improvement unless users opt out of that last purpose. It describes confidentiality obligations, access controls, and logging.',
+        sources: ['404-media', 'consumer-faq'],
+      },
+      {
+        label: 'What filtering can miss',
+        text: 'OpenAI’s Privacy Filter documentation explicitly warns that the tool does not guarantee anonymity and can miss unusual identifiers or ambiguous private references. That supports caution about redaction; it does not measure the failure rate inside Project Lily.',
+        sources: ['privacy-filter'],
+      },
+      {
+        label: 'What you can control',
+        text: 'OpenAI offers a training opt-out under Settings → Data Controls → Improve the model for everyone. Its FAQ says Temporary Chats are not used for training but may be reviewed for abuse. A training opt-out is not a promise of zero human access for the other purposes listed in the consumer FAQ.',
+        sources: ['data-controls', 'consumer-faq'],
+      },
+    ],
+    ourTake:
+      'An intimate chat interface needs a clear explanation of who might read the conversation. Users should be able to understand and control that trade before sharing sensitive material. The people doing the review work deserve visibility too.',
+    sources: [
+      {
+        id: '404-media',
+        label: '404 Media — Original Project Lily investigation',
+        url: 'https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/',
+        kind: 'Reporting',
+        publishedAt: '2026-09-14',
+      },
+      {
+        id: 'toms-hardware',
+        label:
+          'Tom’s Hardware — Follow-up on reviewer access and memory summaries',
+        url: 'https://www.tomshardware.com/tech-industry/artificial-intelligence/chatgpt-transcripts-are-reportedly-read-by-humans-to-improve-responses-including-those-with-personal-information-project-lilly-has-seen-openai-hire-hundreds-of-contractors-to-manually-review-logs',
+        kind: 'Reporting',
+        publishedAt: '2026-09-15',
+      },
+      {
+        id: 'consumer-faq',
+        label: 'OpenAI — Data Usage for Consumer Services FAQ',
+        url: 'https://help.openai.com/en/articles/7039943-data-usage-for-consumer-services-faq',
+        kind: 'Primary source',
+      },
+      {
+        id: 'privacy-filter',
+        label: 'OpenAI — Privacy Filter and its limitations',
+        url: 'https://openai.com/index/introducing-openai-privacy-filter/',
+        kind: 'Primary source',
+        publishedAt: '2026-04-22',
+      },
+      {
+        id: 'data-controls',
+        label: 'OpenAI — Data Controls FAQ',
+        url: 'https://help.openai.com/en/articles/7730893-data-controls-faq',
+        kind: 'Primary source',
+      },
+    ],
+  },
   {
     id: 'anthropic-slowdown-ipo',
     title: 'Anthropic’s slowdown call meets its IPO ambitions.',
