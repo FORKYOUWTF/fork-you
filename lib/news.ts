@@ -25,6 +25,75 @@ export type NewsStory = {
 
 export const newsStories: NewsStory[] = [
   {
+    id: 'zcode-git-workspace-uploads',
+    title: 'ZCode’s uploads reached beyond source files into .git.',
+    topic: 'Code privacy & consent',
+    eventDate: '2026-09-18',
+    reviewedAt: '2026-09-20',
+    summary:
+      'Researchers found ZCode packaging project files and Git history for background uploads. Z.ai apologized, and a later release addressed the upload mechanism. What happened to earlier cloud copies remains unverified.',
+    status: 'Upload findings; fix reported',
+    context: [
+      {
+        label: 'What was packaged',
+        text: 'In a September 18 analysis of ZCode 3.12.3, ferstar describes encrypted workspace snapshots destined for Alibaba Cloud storage. The manifest included source files, Git objects, LFS assets and reflogs; .git accounted for 86.6% of the measured snapshot.',
+        sources: ['ferstar'],
+      },
+      {
+        label: 'An attempted upload is not a completed upload',
+        text: 'The author’s September 19 clarification says the 313 MB commercial-project archive never uploaded successfully. A separate 538-file public repository did receive server confirmation. The large archive’s presence on disk alone does not prove it reached the cloud.',
+        sources: ['ferstar'],
+      },
+      {
+        label: 'A separate local inspection',
+        text: 'Silent Star reports finding Git-heavy manifests in version 3.10.1, with smaller snapshots accepted by the server and a private repository still pending. That analysis says Git metadata bypassed filters applied to ordinary files. This could expose previously committed secrets, but the author reports finding no real credentials in the repositories checked.',
+        sources: ['silent-star'],
+      },
+      {
+        label: 'The company’s response',
+        text: 'IT Home reports that Z.ai apologized on September 18 and attributed the issue to codebase indexing and Repo Wiki, which had initially been enabled by default. The company says uploaded data is destroyed after cloud-generated wiki pages are completed. It also promised to open-source ZCode and bring in outside reviewers; these are commitments, not completed audits.',
+        sources: ['ithome'],
+      },
+      {
+        label: 'What changed in 3.14.0',
+        text: 'ZCode’s September 19 release notes list a repository-wiki upload fix. Ferstar’s updated inspection says version 3.14.0 removed the upload pipeline. These findings concern the client change; they do not independently verify deletion of previously uploaded data. FORK YOU has reviewed the sources, not reproduced the client analysis.',
+        sources: ['zcode-changelog', 'ferstar'],
+      },
+    ],
+    ourTake:
+      'Your repository’s history deserves the same consent as its current files. Coding tools should show what leaves your machine, provide a working opt-out, and make retention claims verifiable. Publishing source and an independent audit would give users something concrete to inspect.',
+    sources: [
+      {
+        id: 'ferstar',
+        label: 'ferstar — Original analysis and September 19 clarification',
+        url: 'https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/',
+        kind: 'Primary source',
+        publishedAt: '2026-09-18',
+      },
+      {
+        id: 'silent-star',
+        label: 'Silent Star — Separate local inspection (Chinese)',
+        url: 'https://blog.silencestar.com/posts/zcode-repo-snapshot/',
+        kind: 'Primary source',
+        publishedAt: '2026-09-18',
+      },
+      {
+        id: 'ithome',
+        label: 'IT Home — Z.ai’s apology and response (Chinese)',
+        url: 'https://www.ithome.com/1/004/310.htm',
+        kind: 'Reporting',
+        publishedAt: '2026-09-18',
+      },
+      {
+        id: 'zcode-changelog',
+        label: 'ZCode — Official 3.14.0 release notes',
+        url: 'https://zcode.z.ai/en/changelog',
+        kind: 'Primary source',
+        publishedAt: '2026-09-19',
+      },
+    ],
+  },
+  {
     id: 'openai-project-lily-chat-review',
     title: 'Project Lily: the people reading ChatGPT conversations.',
     topic: 'Privacy & data work',
