@@ -1,16 +1,18 @@
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
-import { newsStories, formatNewsDate } from '@/lib/news';
+import { formatNewsDate } from '@/lib/news';
+import { getNewsStories } from '@/lib/localization';
+import { copy } from '@/lib/copy';
+import type { Language } from '@/lib/language';
 import { reportCorrectionUrl, suggestStoryUrl } from '@/lib/community';
 
-export function NewsSection() {
+export function NewsSection({ language }: { language: Language }) {
+  const t = copy[language];
+  const newsStories = getNewsStories(language);
   return (
     <section id="news" className="news" aria-labelledby="news-heading">
-      <p className="eyebrow">NEWS / POWER / ACCOUNTABILITY</p>
-      <h2 id="news-heading">News, with receipts.</h2>
-      <p className="news-intro">
-        Frontier AI, money, and who gets a say. Read what happened, what’s
-        disputed, and why we’re paying attention.
-      </p>
+      <p className="eyebrow">{t.newsKicker}</p>
+      <h2 id="news-heading">{t.newsTitle}</h2>
+      <p className="news-intro">{t.newsIntro}</p>
       <div className="news-list">
         {newsStories.map((story) => (
           <article
@@ -22,7 +24,7 @@ export function NewsSection() {
             <div className="news-meta">
               <span>{story.topic}</span>
               <time dateTime={story.eventDate}>
-                {formatNewsDate(story.eventDate)}
+                {formatNewsDate(story.eventDate, language)}
               </time>
             </div>
             <h3 id={`${story.id}-heading`}>
@@ -31,9 +33,9 @@ export function NewsSection() {
             <p className="news-summary">{story.summary}</p>
             <span className="news-status">{story.status}</span>
             <details className="news-context">
-              <summary aria-label={`Read the context: ${story.title}`}>
-                Read the context
-                <span>{story.sources.length} sources</span>
+              <summary aria-label={t.contextFor(story.title)}>
+                {t.readContext}
+                <span>{t.sourceCount(story.sources.length)}</span>
                 <ChevronDown size={17} aria-hidden="true" />
               </summary>
               <div className="news-context-body">
@@ -54,7 +56,7 @@ export function NewsSection() {
                             key={id}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Source ${index + 1}: ${source.label}`}
+                            aria-label={t.sourceLabel(index + 1, source.label)}
                           >
                             [{index + 1}]
                           </a>
@@ -63,11 +65,11 @@ export function NewsSection() {
                     </p>
                   </div>
                 ))}
-                <aside className="news-take" aria-label="Our editorial view">
-                  <h4>Our take · Opinion</h4>
+                <aside className="news-take" aria-label={t.editorialView}>
+                  <h4>{t.ourTake}</h4>
                   <p>{story.ourTake}</p>
                 </aside>
-                <h4>Read the sources</h4>
+                <h4>{t.sources}</h4>
                 <ol className="news-sources">
                   {story.sources.map((source) => (
                     <li key={source.id}>
@@ -80,13 +82,13 @@ export function NewsSection() {
                         <ArrowUpRight size={15} aria-hidden="true" />
                       </a>
                       <span>
-                        {source.kind}
+                        {t.sourceKinds[source.kind]}
                         {source.publishedAt && (
                           <>
                             {' '}
                             ·{' '}
                             <time dateTime={source.publishedAt}>
-                              {formatNewsDate(source.publishedAt)}
+                              {formatNewsDate(source.publishedAt, language)}
                             </time>
                           </>
                         )}
@@ -95,21 +97,20 @@ export function NewsSection() {
                   ))}
                 </ol>
                 <p className="news-reviewed">
-                  Sources checked{' '}
+                  {t.checked}{' '}
                   <time dateTime={story.reviewedAt}>
-                    {formatNewsDate(story.reviewedAt)}
+                    {formatNewsDate(story.reviewedAt, language)}
                   </time>{' '}
-                  (UTC). This is a dated brief; later developments may change
-                  the picture.
+                  {t.datedBrief}
                 </p>
                 <a
                   className="action-link"
                   href={reportCorrectionUrl(story.title)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Report a correction: ${story.title}`}
+                  aria-label={t.newsCorrection(story.title)}
                 >
-                  Report a correction
+                  {t.correction}
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </a>
               </div>
@@ -124,13 +125,10 @@ export function NewsSection() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Bring a story. Bring sources.
+          {t.bringStory}
           <ArrowUpRight size={17} aria-hidden="true" />
         </a>
-        <p className="submission-note">
-          Suggestions and corrections open public GitHub forms and require
-          sign-in. We review sources before publishing or updating a brief.
-        </p>
+        <p className="submission-note">{t.newsSubmission}</p>
       </div>
     </section>
   );

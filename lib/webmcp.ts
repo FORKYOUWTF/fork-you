@@ -1,12 +1,13 @@
 import {
   categories,
   intents,
-  organizations,
   filterOrganizations,
   getPrimaryAction,
   parseFilters,
   type DirectoryFilters,
-} from './directory';
+} from './directory.ts';
+import { getOrganizations } from './localization.ts';
+import type { Language } from './language.ts';
 
 type Tool = {
   name: string;
@@ -23,6 +24,7 @@ type ModelContext = {
 };
 
 export function registerDirectoryTools(actions: {
+  language: () => Language;
   read: () => Required<DirectoryFilters>;
   apply: (filters: Required<DirectoryFilters>) => void;
 }) {
@@ -34,7 +36,11 @@ export function registerDirectoryTools(actions: {
     const filters = actions.read();
     return {
       filters,
-      results: filterOrganizations(organizations, filters).map((org) => ({
+      language: actions.language(),
+      results: filterOrganizations(
+        getOrganizations(actions.language()),
+        filters,
+      ).map((org) => ({
         id: org.id,
         name: org.name,
         category: org.category,

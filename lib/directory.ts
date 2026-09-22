@@ -38,6 +38,7 @@ export type Organization = {
   actions: { label: string; url: string; intent: Exclude<Intent, 'all'> }[];
   sources: { label: string; url: string }[];
   reviewedAt: string;
+  searchTerms?: string[];
 };
 export const organizations: Organization[] = [
   {
@@ -650,6 +651,7 @@ export function filterOrganizations(
       ...org.tags,
       org.governance,
       org.participation,
+      ...(org.searchTerms ?? []),
     ]
       .join(' ')
       .toLocaleLowerCase();

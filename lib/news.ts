@@ -274,8 +274,11 @@ export const newsStories: NewsStory[] = [
   },
 ];
 
-export function formatNewsDate(date: string): string {
-  return new Intl.DateTimeFormat('en', {
+export function formatNewsDate(
+  date: string,
+  language: 'en' | 'zh-CN' = 'en',
+): string {
+  return new Intl.DateTimeFormat(language, {
     day: 'numeric',
     month: 'short',
     year: 'numeric',

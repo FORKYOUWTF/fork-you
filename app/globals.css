@@ -92,7 +92,9 @@ html {
 }
 body {
   margin: 0;
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-geist-sans), 'PingFang SC', 'Microsoft YaHei',
+    'Noto Sans CJK SC', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.8;
 }
@@ -155,6 +157,38 @@ main > section:not(.intro) {
   min-height: 84px;
   font-size: 13px;
   border-bottom: 1px solid var(--border);
+}
+.header-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 18px;
+}
+.language-switch select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px;
+  border: 1px solid var(--input);
+  border-radius: 2px;
+  background: var(--brand-paper);
+  color: var(--brand-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.language-switch select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+html:lang(zh) h1 {
+  font-size: clamp(1.65rem, 4.5vw, 2.8rem);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+html:lang(zh) h2,
+html:lang(zh) h3,
+html:lang(zh) .closing-slogan {
+  letter-spacing: 0;
 }
 .wordmark {
   display: inline-flex;
@@ -857,6 +891,11 @@ footer p a {
   .site-header nav {
     justify-content: flex-start;
     gap: 0 18px;
+  }
+  .header-tools {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4px 12px;
   }
   .site-header .wordmark svg {
     display: none;

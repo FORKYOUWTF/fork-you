@@ -57,6 +57,12 @@ Profiles are maintained in `lib/directory.ts`. Entries include official source l
 
 Submissions are public and require a GitHub account. Suggestions and corrections are reviewed against the [listing standards](https://forkyou.wtf/#standards) before publication. Each listing's “Why them?” panel also has a correction link that fills in its name.
 
+## Languages
+
+The site supports English and conversational Simplified Chinese. On first visit, it uses the first supported language in the browser's preference list (Chinese variants map to Simplified Chinese), with English as the fallback. The header's **Auto / 自动**, **English**, and **简体中文** selector remembers a manual choice on that browser. Choosing Auto restores browser-language selection. No location lookup or translation service is used; switching still works when local storage is blocked, but the choice may not survive a reload.
+
+The static HTML is English; browser-language selection runs after hydration. Both languages share the same URLs and article anchors. English remains available without JavaScript. Chinese text lives in `lib/copy.ts`, `lib/directory-zh.ts`, and `lib/news-zh.ts`. Translations reuse the original IDs, source URLs, citation relationships, and evidence-review dates. Keep both languages in sync when changing content; tests check translation coverage. Search accepts English and Chinese in either display language, and preserves the current filters when switching.
+
 ## News briefs
 
 The [news section](https://forkyou.wtf/#news) is maintained in `lib/news.ts`. Each brief includes an event date, a source-review date in UTC, context linked to individual sources, and a separate editorial view. Source types distinguish first-party statements, reporting, and opinion. Briefs are manually reviewed; the site does not fetch or publish headlines automatically.
