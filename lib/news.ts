@@ -1,3 +1,5 @@
+import type { Language } from './language.ts';
+
 export type NewsSource = {
   id: string;
   label: string;
@@ -276,7 +278,7 @@ export const newsStories: NewsStory[] = [
 
 export function formatNewsDate(
   date: string,
-  language: 'en' | 'zh-CN' = 'en',
+  language: Language = 'en',
 ): string {
   return new Intl.DateTimeFormat(language, {
     day: 'numeric',

@@ -40,7 +40,11 @@ import { NewsSection } from '@/components/news-section';
 import { useLanguage } from '@/components/use-language';
 import { copy } from '@/lib/copy';
 import { getOrganizations } from '@/lib/localization';
-import { parseLanguagePreference, type Language } from '@/lib/language';
+import {
+  languageOptions,
+  parseLanguagePreference,
+  type Language,
+} from '@/lib/language';
 import {
   repositoryUrl,
   suggestProjectUrl,
@@ -226,20 +230,23 @@ export default function Home() {
             <a href="#contribute">{t.contribute}</a>
           </nav>
           <label className="language-switch">
-            <span className="sr-only">Language / 语言</span>
+            <span className="sr-only">{t.language}</span>
             <select
               value={preference}
               onChange={(e) =>
                 chooseLanguage(parseLanguagePreference(e.target.value))
               }
             >
-              <option value="auto">Auto / 自动</option>
-              <option value="en" lang="en">
-                English
-              </option>
-              <option value="zh-CN" lang="zh-CN">
-                简体中文
-              </option>
+              <option value="auto">{t.automatic}</option>
+              {languageOptions.map((option) => (
+                <option
+                  key={option.value}
+                  value={option.value}
+                  lang={option.value}
+                >
+                  {option.label}
+                </option>
+              ))}
             </select>
           </label>
         </div>

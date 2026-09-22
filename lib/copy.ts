@@ -1,4 +1,14 @@
+import * as traditional from './locales/zh-TW.ts';
+import * as korean from './locales/ko.ts';
+import * as japanese from './locales/ja.ts';
+import * as spanish from './locales/es.ts';
+import * as french from './locales/fr.ts';
+import * as italian from './locales/it.ts';
+import type { Language } from './language.ts';
+
 const en = {
+  language: 'Language',
+  automatic: 'Auto',
   pageTitle: 'FORK YOU — Fork the future.',
   pageDescription:
     'They want to eat everything. Fork the future. Find open-source projects, companies, and public-interest organizations worth your skills.',
@@ -121,7 +131,11 @@ const en = {
     'Suggestions and corrections open public GitHub forms and require sign-in. We review sources before publishing or updating a brief.',
 };
 
-const zh: typeof en = {
+export type UICopy = typeof en;
+
+const zh: UICopy = {
+  language: '语言',
+  automatic: '自动',
   pageTitle: 'FORK YOU — 未来，我们另开一条路。',
   pageDescription:
     '他们想把一切都吃下。未来，我们另开一条路。一起找找值得参与的开源项目、开放协作的公司和公益组织。',
@@ -242,4 +256,13 @@ const zh: typeof en = {
     '推荐新闻或提出更正，会打开公开的 GitHub 表单，需要登录。我们核对来源后，再发布或更新。',
 };
 
-export const copy = { en, 'zh-CN': zh };
+export const copy: Record<Language, UICopy> = {
+  en,
+  'zh-CN': zh,
+  'zh-TW': traditional.ui,
+  ko: korean.ui,
+  ja: japanese.ui,
+  es: spanish.ui,
+  fr: french.ui,
+  it: italian.ui,
+};

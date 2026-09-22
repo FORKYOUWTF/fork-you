@@ -621,13 +621,20 @@ export type DirectoryFilters = {
   category?: Category;
   intent?: Intent;
 };
+function normalizeSearch(text: string): string {
+  // Ignore Latin accents, while preserving Japanese voicing marks.
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 export function filterOrganizations(
   records: Organization[],
   filters: DirectoryFilters = {},
 ) {
-  const terms = (filters.query ?? '')
+  const terms = normalizeSearch(filters.query ?? '')
     .trim()
-    .toLocaleLowerCase()
     .split(/\s+/)
     .filter(Boolean);
   return records.filter((org) => {
@@ -643,18 +650,18 @@ export function filterOrganizations(
       !org.actions.some((action) => action.intent === filters.intent)
     )
       return false;
-    const searchable = [
-      org.id,
-      org.initials,
-      org.name,
-      org.description,
-      ...org.tags,
-      org.governance,
-      org.participation,
-      ...(org.searchTerms ?? []),
-    ]
-      .join(' ')
-      .toLocaleLowerCase();
+    const searchable = normalizeSearch(
+      [
+        org.id,
+        org.initials,
+        org.name,
+        org.description,
+        ...org.tags,
+        org.governance,
+        org.participation,
+        ...(org.searchTerms ?? []),
+      ].join(' '),
+    );
     return terms.every((term) => searchable.includes(term));
   });
 }

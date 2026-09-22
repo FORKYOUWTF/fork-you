@@ -98,6 +98,23 @@ body {
   font-size: 16px;
   line-height: 1.8;
 }
+html:lang(zh-TW) body {
+  font-family:
+    var(--font-geist-sans), 'PingFang TC', 'Microsoft JhengHei',
+    'Noto Sans CJK TC', sans-serif;
+}
+html:lang(ja) body {
+  font-family:
+    var(--font-geist-sans), 'Hiragino Sans', 'Yu Gothic', Meiryo,
+    'Noto Sans CJK JP', sans-serif;
+}
+html:lang(ko) body {
+  font-family:
+    var(--font-geist-sans), 'Apple SD Gothic Neo', 'Malgun Gothic',
+    'Noto Sans CJK KR', sans-serif;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 a {
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
@@ -164,6 +181,7 @@ main > section:not(.intro) {
   align-items: center;
   justify-content: flex-end;
   gap: 8px 18px;
+  min-width: 0;
 }
 .language-switch select {
   min-height: 44px;
@@ -180,14 +198,23 @@ main > section:not(.intro) {
   outline: 2px solid var(--ring);
   outline-offset: 4px;
 }
-html:lang(zh) h1 {
+html:lang(zh) h1,
+html:lang(ja) h1,
+html:lang(ko) h1 {
   font-size: clamp(1.65rem, 4.5vw, 2.8rem);
   line-height: 1.5;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 html:lang(zh) h2,
 html:lang(zh) h3,
-html:lang(zh) .closing-slogan {
+html:lang(zh) .closing-slogan,
+html:lang(ja) h2,
+html:lang(ja) h3,
+html:lang(ja) .closing-slogan,
+html:lang(ko) h2,
+html:lang(ko) h3,
+html:lang(ko) .closing-slogan {
   letter-spacing: 0;
 }
 .wordmark {
