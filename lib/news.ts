@@ -27,6 +27,171 @@ export type NewsStory = {
 
 export const newsStories: NewsStory[] = [
   {
+    id: 'openai-robinson-safety-resignation',
+    title: 'An OpenAI safety-report author quits over its culture.',
+    topic: 'Safety & accountability',
+    eventDate: '2026-10-03',
+    reviewedAt: '2026-10-04',
+    summary:
+      'David Robinson says OpenAI’s pace leaves too little room for careful safety work. OpenAI says it strengthens safeguards and holds back models when needed.',
+    status: 'First-person criticism; company response',
+    context: [
+      {
+        label: 'What Robinson says',
+        text: 'In an October 3 essay, Robinson says he resigned after leading the writing of launch safety reports. He argues that constant sprints undermine deeper changes and calls for expertise from fields such as aviation and nuclear safety. This is his account and assessment of the culture.',
+        sources: ['robinson'],
+      },
+      {
+        label: 'OpenAI’s response',
+        text: 'Spokesperson Drew Pusateri says OpenAI strengthens safeguards, expands outside evaluations and pauses training or withholds models when necessary.',
+        sources: ['techcrunch-response'],
+      },
+      {
+        label: 'A concrete safety decision',
+        text: 'AP reported on September 29 that OpenAI had delayed GPT-6.1 Astra after safety concerns. That is a documented decision to hold a release, rather than evidence that every safeguard works.',
+        sources: ['ap-delay'],
+      },
+      {
+        label: 'What this establishes',
+        text: 'A departing employee’s warning deserves scrutiny. It is not an independent audit or proof that a predicted disaster will happen; the company’s assurances are not an independent audit either.',
+        sources: ['robinson', 'techcrunch-response'],
+      },
+    ],
+    ourTake:
+      'Safety teams need enough time and authority to stop a release. Public incident reports and independent scrutiny would help people judge whether that power works in practice.',
+    sources: [
+      {
+        id: 'robinson',
+        label: 'David Robinson / The Atlantic — Resignation essay',
+        url: 'https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/',
+        kind: 'Opinion',
+        publishedAt: '2026-10-03',
+      },
+      {
+        id: 'techcrunch-response',
+        label: 'TechCrunch — OpenAI’s response to Robinson',
+        url: 'https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/',
+        kind: 'Reporting',
+        publishedAt: '2026-10-03',
+      },
+      {
+        id: 'ap-delay',
+        label: 'AP — OpenAI delays a model over safety concerns',
+        url: 'https://apnews.com/article/5afb865b2cddc439efdcf31ebdc406a5',
+        kind: 'Reporting',
+        publishedAt: '2026-09-29',
+      },
+    ],
+  },
+  {
+    id: 'apple-muse-agent-permissions',
+    title:
+      'Apple promises tighter controls as AI agents reach into private files.',
+    topic: 'Agent privacy & consent',
+    eventDate: '2026-10-02',
+    reviewedAt: '2026-10-04',
+    summary:
+      'Apple plans stricter consent for Full Disk Access. The announcement follows a disputed account of Meta’s Muse reading private messages; it does not settle what happened on that Mac.',
+    status: 'Apple announcement; Muse claim disputed',
+    context: [
+      {
+        label: 'What Apple announced',
+        text: 'On October 2, Apple said some developers use Full Disk Access in ways that expose files, mail, messages and browsing history without users fully understanding. It promised additional controls requiring explicit user action, but gave no rollout date. This is an announced change, not a verified fix already on your Mac.',
+        sources: ['apple'],
+      },
+      {
+        label: 'The earlier account',
+        text: 'In a September 19 column, Jason Aten says Muse referred to private Messages conversations despite his decision not to grant access. He describes finding a synced Messages database. This is his first-person account; FORK YOU has not reproduced it.',
+        sources: ['aten'],
+      },
+      {
+        label: 'Meta’s response',
+        text: 'Meta says Muse needs both macOS Full Disk Access and an enabled Messages connector to read messages. Ars Technica reports the company repeated that position when questioned.',
+        sources: ['ars'],
+      },
+      {
+        label: 'What remains unresolved',
+        text: 'Apple’s general warning does not name Muse or determine which permissions Aten granted. The sources establish a consent dispute and a platform response, not a demonstrated bypass of macOS protections.',
+        sources: ['apple', 'aten', 'ars'],
+      },
+    ],
+    ourTake:
+      '“Let this app help” should not leave people guessing which private conversations it can read. Permissions should name the data involved, and users should be able to inspect and revoke access.',
+    sources: [
+      {
+        id: 'apple',
+        label: 'Apple Developer — Planned Full Disk Access changes',
+        url: 'https://developer.apple.com/news/?id=p6zjojqw',
+        kind: 'Primary source',
+        publishedAt: '2026-10-02',
+      },
+      {
+        id: 'aten',
+        label: 'Jason Aten / Inc. — First-person account of Muse and Messages',
+        url: 'https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202',
+        kind: 'Opinion',
+        publishedAt: '2026-09-19',
+      },
+      {
+        id: 'ars',
+        label: 'Ars Technica — Apple’s announcement and Meta’s response',
+        url: 'https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/',
+        kind: 'Reporting',
+        publishedAt: '2026-10-02',
+      },
+    ],
+  },
+  {
+    id: 'ftc-frontier-labs-consumer-investigation',
+    title: 'The FTC is investigating AI labs over consumer risks.',
+    topic: 'Regulation & public oversight',
+    eventDate: '2026-09-30',
+    reviewedAt: '2026-10-04',
+    summary:
+      'The US Federal Trade Commission confirmed an investigation involving OpenAI, Anthropic and other AI companies. An investigation is not a finding of wrongdoing.',
+    status: 'Investigation confirmed; outcome unresolved',
+    context: [
+      {
+        label: 'What is confirmed',
+        text: 'AP reported on September 30 that an FTC spokesperson confirmed the consumer-risk investigation and declined to give further details.',
+        sources: ['ap-ftc'],
+      },
+      {
+        label: 'What is reportedly being sought',
+        text: 'Bloomberg, citing an unnamed source, reported that the agency was preparing formal information demands concerning compliance with consumer-protection laws.',
+        sources: ['bloomberg'],
+      },
+      {
+        label: 'Company responses',
+        text: 'AP said OpenAI and Anthropic had not immediately responded by publication on September 30. That does not establish their position today.',
+        sources: ['ap-ftc'],
+      },
+      {
+        label: 'What is still unknown',
+        text: 'The cited reports do not establish the investigation’s full scope, eventual findings or penalties. Reported plans to seek records should not be confused with a completed enforcement action.',
+        sources: ['ap-ftc', 'bloomberg'],
+      },
+    ],
+    ourTake:
+      'Public oversight should test what companies tell users about safety. The useful questions are what evidence investigators obtain, what becomes public, and whether any remedies give people more control.',
+    sources: [
+      {
+        id: 'ap-ftc',
+        label: 'AP — FTC confirms the investigation',
+        url: 'https://apnews.com/article/89ac416717adbfb1d72f2d85e6ce83d1',
+        kind: 'Reporting',
+        publishedAt: '2026-09-30',
+      },
+      {
+        id: 'bloomberg',
+        label: 'Bloomberg — Report on planned information demands',
+        url: 'https://bloomberg.com/news/articles/2026-09-30/ftc-probing-openai-and-anthropic-over-product-safety-concerns',
+        kind: 'Reporting',
+        publishedAt: '2026-09-30',
+      },
+    ],
+  },
+  {
     id: 'zcode-git-workspace-uploads',
     title: 'ZCode’s uploads reached beyond source files into .git.',
     topic: 'Code privacy & consent',

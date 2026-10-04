@@ -371,6 +371,101 @@ export const sourceLabels: Record<string, string> = {
 };
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  'openai-robinson-safety-resignation': {
+    title: 'OpenAI 安全報告負責人離職，質疑公司的工作文化。',
+    topic: '安全與責任',
+    summary:
+      'David Robinson 認為，OpenAI 的步調太快，留給安全工作仔細把關的空間太少。OpenAI 回應，公司會加強防護，也會在必要時暫緩推出模型。',
+    status: '當事人提出批評；公司已回應',
+    context: {
+      'What Robinson says': {
+        label: 'Robinson 怎麼說',
+        text: 'Robinson 在 10 月 3 日的文章中表示自己已離職，先前負責統籌撰寫模型推出時的安全報告。他認為，不斷趕進度讓更深層的改變難以落實，並呼籲引進航空、核安等領域的經驗。這是他對公司文化的親身描述與判斷。',
+      },
+      'OpenAI’s response': {
+        label: 'OpenAI 的回應',
+        text: '發言人 Drew Pusateri 表示，OpenAI 會加強防護、擴大外部評估，並在必要時暫停訓練或暫緩推出模型。',
+      },
+      'A concrete safety decision': {
+        label: '確實有一次發布被延後了',
+        text: '美聯社 9 月 29 日報導，OpenAI 因安全疑慮延後推出 GPT-6.1 Astra。這能說明公司確實做過暫緩發布的決定，但不能據此證明所有防護都有效。',
+      },
+      'What this establishes': {
+        label: '這些資訊能說明什麼',
+        text: '離職員工的警告值得認真看待，但它不是獨立稽核，也不能證明預言中的災難一定會發生。公司的安全保證，同樣不是獨立稽核。',
+      },
+    },
+    ourTake:
+      '安全團隊需要足夠的時間，也需要真正喊停發布的權力。公開事故報告、接受獨立檢視，才能讓大家判斷這種權力是否真的發揮作用。',
+    sourceLabels: {
+      robinson: 'David Robinson / The Atlantic：離職文章（英文）',
+      'techcrunch-response': 'TechCrunch：OpenAI 對 Robinson 的回應（英文）',
+      'ap-delay': '美聯社：OpenAI 因安全疑慮延後推出模型（英文）',
+    },
+  },
+  'apple-muse-agent-permissions': {
+    title: 'AI 助理能讀多少私人檔案？Apple 準備收緊授權。',
+    topic: 'AI 助理、隱私與同意',
+    summary:
+      'Apple 計畫對「完整磁碟存取權」提出更嚴格的同意要求。此前，有人指稱 Meta 的 Muse 未經同意讀取私人訊息，Meta 對此有異議。Apple 的公告並沒有查明那台 Mac 上到底發生了什麼。',
+    status: 'Apple 已公告；Muse 事件仍有爭議',
+    context: {
+      'What Apple announced': {
+        label: 'Apple 宣布了什麼',
+        text: 'Apple 10 月 2 日表示，部分開發者使用完整磁碟存取權的方式，會讓檔案、郵件、訊息和瀏覽紀錄在使用者未充分了解的情況下暴露。Apple 承諾增加控制措施，要求使用者明確操作，但沒有公布上線日期。這是預告的調整，不代表你的 Mac 已經完成修正。',
+      },
+      'The earlier account': {
+        label: '先前的親身經歷',
+        text: 'Jason Aten 在 9 月 19 日的專欄中說，自己選擇不授予存取權，Muse 卻提到了私人「訊息」對話。他也描述了發現訊息資料庫被同步的情況。這是他的親身陳述，FORK YOU 沒有自行重現。',
+      },
+      'Meta’s response': {
+        label: 'Meta 怎麼回應',
+        text: 'Meta 表示，Muse 必須同時獲得 macOS 的完整磁碟存取權，並啟用 Messages 連接器，才能讀取訊息。據 Ars Technica 報導，公司在被追問時重申了這個說法。',
+      },
+      'What remains unresolved': {
+        label: '還沒釐清的部分',
+        text: 'Apple 的一般性警告沒有點名 Muse，也沒有判定 Aten 當時授予了哪些權限。這些來源能說明授權存在爭議、平台做出了回應，不能證明 macOS 的保護機制被繞過。',
+      },
+    },
+    ourTake:
+      '按下「讓這個 App 幫忙」之後，使用者不該還得猜它能讀哪些私人對話。權限應該明確列出涉及的資料，也要讓人能查看並隨時撤銷存取。',
+    sourceLabels: {
+      apple: 'Apple Developer：完整磁碟存取權的調整計畫（英文）',
+      aten: 'Jason Aten / Inc.：Muse 與「訊息」的親身經歷（英文）',
+      ars: 'Ars Technica：Apple 公告與 Meta 回應（英文）',
+    },
+  },
+  'ftc-frontier-labs-consumer-investigation': {
+    title: 'FTC 正在調查 AI 公司可能帶來的消費者風險。',
+    topic: '監管與公眾監督',
+    summary:
+      '美國聯邦貿易委員會（FTC）確認，一項涉及 OpenAI、Anthropic 等 AI 公司的調查正在進行。展開調查，不等於已經認定有違法行為。',
+    status: '調查已確認；結果未定',
+    context: {
+      'What is confirmed': {
+        label: '確認了什麼',
+        text: '美聯社 9 月 30 日報導，FTC 發言人確認了這項針對消費者風險的調查，但未透露更多細節。',
+      },
+      'What is reportedly being sought': {
+        label: '據報導，正在準備要求什麼',
+        text: '彭博社引述匿名消息人士表示，FTC 正準備正式要求企業提供資訊，以調查其是否遵守消費者保護法律。',
+      },
+      'Company responses': {
+        label: '公司的回應呢',
+        text: '美聯社表示，截至 9 月 30 日報導刊出時，OpenAI 與 Anthropic 尚未立即回覆置評請求。這不能代表兩家公司今天的立場。',
+      },
+      'What is still unknown': {
+        label: '還有哪些未知',
+        text: '這些報導沒有確定調查的完整範圍、最終結論或處罰。媒體所說的準備索取資料，也不等於執法行動已經完成。',
+      },
+    },
+    ourTake:
+      '公眾監督應該檢驗公司對使用者做出的安全承諾。值得繼續追問的是：調查人員拿到了什麼證據，哪些會公開，以及後續措施是否能讓使用者更有決定權。',
+    sourceLabels: {
+      'ap-ftc': '美聯社：FTC 確認調查（英文）',
+      bloomberg: '彭博社：計畫正式要求提供資訊的報導（英文）',
+    },
+  },
   'zcode-git-workspace-uploads': {
     title: 'ZCode 上傳的，不只是原始碼，還有 .git 裡的歷史。',
     topic: '程式碼隱私與使用者同意',

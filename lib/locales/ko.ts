@@ -379,6 +379,102 @@ export const sourceLabels: Record<string, string> = {
 };
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  'openai-robinson-safety-resignation': {
+    title: 'OpenAI 안전 보고서 책임자, 회사 문화를 비판하며 퇴사하다.',
+    topic: '안전과 책임',
+    summary:
+      'David Robinson은 OpenAI가 너무 빠르게 움직여 안전을 꼼꼼히 챙길 여유가 부족하다고 말합니다. OpenAI는 보호 조치를 강화하고 필요할 때 모델 출시를 미룬다고 답했습니다.',
+    status: '당사자의 비판과 회사의 답변',
+    context: {
+      'What Robinson says': {
+        label: 'Robinson의 이야기',
+        text: 'Robinson은 10월 3일 기고에서 퇴사 사실을 밝히며, 그동안 모델 출시 때 공개하는 안전 보고서 작성을 이끌었다고 설명했습니다. 계속되는 속도전이 근본적인 변화를 어렵게 한다며 항공·원자력 안전 분야의 경험을 도입하자고 제안했습니다. 회사 문화에 대한 그의 경험과 판단입니다.',
+      },
+      'OpenAI’s response': {
+        label: 'OpenAI의 답변',
+        text: '대변인 Drew Pusateri는 OpenAI가 보호 조치와 외부 평가를 강화하고, 필요하면 학습을 중단하거나 모델 출시를 보류한다고 밝혔습니다.',
+      },
+      'A concrete safety decision': {
+        label: '실제로 미뤄진 출시도 있습니다',
+        text: 'AP는 9월 29일 OpenAI가 안전 우려로 GPT-6.1 Astra 출시를 미뤘다고 보도했습니다. 실제로 출시를 보류한 결정은 확인되지만, 이것이 모든 보호 조치가 효과적이라는 증거는 아닙니다.',
+      },
+      'What this establishes': {
+        label: '여기서 확인할 수 있는 것',
+        text: '퇴사한 직원의 경고는 진지하게 살펴볼 필요가 있습니다. 다만 독립적인 감사 결과도, 예상한 재앙이 반드시 일어난다는 증거도 아닙니다. 회사의 안전 보장 역시 독립 감사는 아닙니다.',
+      },
+    },
+    ourTake:
+      '안전팀에는 충분한 시간과 출시를 멈출 실질적인 권한이 필요합니다. 사고 보고서를 공개하고 독립적인 검토를 받으면 그 권한이 실제로 작동하는지 누구나 판단하기 쉬워집니다.',
+    sourceLabels: {
+      robinson: 'David Robinson / The Atlantic — 퇴사 이유를 밝힌 기고(영문)',
+      'techcrunch-response': 'TechCrunch — Robinson에 대한 OpenAI의 답변(영문)',
+      'ap-delay': 'AP — 안전 우려에 따른 OpenAI 모델 출시 연기(영문)',
+    },
+  },
+  'apple-muse-agent-permissions': {
+    title:
+      'AI 에이전트가 들여다보는 개인 파일, Apple이 권한 통제를 강화하겠다고 합니다.',
+    topic: '에이전트의 개인정보 접근과 동의',
+    summary:
+      'Apple이 전체 디스크 접근 권한에 더 엄격한 동의 절차를 도입할 계획입니다. 앞서 Meta의 Muse가 동의 없이 메시지를 읽었다는 주장이 나왔지만 Meta는 반박했습니다. Apple의 발표가 그 Mac에서 무슨 일이 있었는지 밝혀준 것은 아닙니다.',
+    status: 'Apple의 발표 확인; Muse 주장은 논쟁 중',
+    context: {
+      'What Apple announced': {
+        label: 'Apple이 발표한 내용',
+        text: 'Apple은 10월 2일 일부 개발자가 전체 디스크 접근 권한을 사용하면서 이용자가 충분히 이해하지 못한 채 파일, 메일, 메시지, 방문 기록이 노출될 수 있다고 밝혔습니다. 명시적인 사용자 조작을 요구하는 추가 통제를 약속했지만 적용 날짜는 공개하지 않았습니다. 앞으로의 변경 예고이지, 지금 Mac에서 문제가 해결됐다는 뜻은 아닙니다.',
+      },
+      'The earlier account': {
+        label: '앞서 나온 당사자의 설명',
+        text: 'Jason Aten은 9월 19일 칼럼에서 접근을 허용하지 않기로 했는데도 Muse가 개인 Messages 대화를 언급했다고 썼습니다. 메시지 데이터베이스가 동기화된 흔적도 발견했다고 합니다. 당사자의 설명이며, FORK YOU가 직접 재현한 것은 아닙니다.',
+      },
+      'Meta’s response': {
+        label: 'Meta의 답변',
+        text: 'Meta는 Muse가 메시지를 읽으려면 macOS의 전체 디스크 접근 권한과 Messages 커넥터가 모두 활성화되어 있어야 한다고 말합니다. Ars Technica에 따르면 회사는 추가 질문에도 같은 입장을 반복했습니다.',
+      },
+      'What remains unresolved': {
+        label: '아직 풀리지 않은 부분',
+        text: 'Apple의 일반적인 경고는 Muse를 지목하지 않았으며 Aten이 어떤 권한을 부여했는지도 판단하지 않았습니다. 이 자료들로 확인되는 것은 동의를 둘러싼 분쟁과 플랫폼의 대응입니다. macOS 보호 기능을 우회했다는 입증은 아닙니다.',
+      },
+    },
+    ourTake:
+      '앱에 도움을 맡겼다고 해서 어떤 사적인 대화까지 읽을 수 있는지 짐작해야 해서는 안 됩니다. 권한 요청은 접근할 데이터를 명확히 밝히고, 이용자가 접근 내역을 확인하고 권한을 거둘 수 있게 해야 합니다.',
+    sourceLabels: {
+      apple: 'Apple Developer — 전체 디스크 접근 권한 변경 계획(영문)',
+      aten: 'Jason Aten / Inc. — Muse와 Messages에 관한 직접 경험(영문)',
+      ars: 'Ars Technica — Apple의 발표와 Meta의 답변(영문)',
+    },
+  },
+  'ftc-frontier-labs-consumer-investigation': {
+    title: 'FTC가 AI 기업의 소비자 위험을 조사하고 있습니다.',
+    topic: '규제와 공적 감독',
+    summary:
+      '미국 연방거래위원회(FTC)가 OpenAI, Anthropic 등 AI 기업이 관련된 조사를 확인했습니다. 조사를 시작했다는 사실이 위법 행위의 확인을 뜻하지는 않습니다.',
+    status: '조사 확인; 결과는 미정',
+    context: {
+      'What is confirmed': {
+        label: '확인된 사실',
+        text: 'AP는 9월 30일 FTC 대변인이 소비자 위험 관련 조사를 확인했지만 추가 설명은 하지 않았다고 보도했습니다.',
+      },
+      'What is reportedly being sought': {
+        label: '어떤 자료를 요구할 예정인가',
+        text: 'Bloomberg는 익명 관계자를 인용해, FTC가 소비자 보호법 준수 여부와 관련한 공식 자료 요구를 준비하고 있다고 보도했습니다.',
+      },
+      'Company responses': {
+        label: '기업들은 어떻게 답했나',
+        text: 'AP는 9월 30일 기사 발행 시점까지 OpenAI와 Anthropic이 즉각적인 답변을 보내지 않았다고 전했습니다. 이것만으로 지금의 입장을 알 수는 없습니다.',
+      },
+      'What is still unknown': {
+        label: '아직 모르는 부분',
+        text: '인용한 보도만으로는 조사의 전체 범위나 최종 결론, 제재 여부를 알 수 없습니다. 자료를 요구할 계획이라는 보도를 이미 끝난 제재 절차로 받아들여서는 안 됩니다.',
+      },
+    },
+    ourTake:
+      '공적 감독은 기업이 이용자에게 내세우는 안전 약속을 검증해야 합니다. 조사관이 어떤 증거를 확보하는지, 무엇이 공개되는지, 후속 조치가 사람들에게 더 많은 통제권을 주는지 지켜볼 일입니다.',
+    sourceLabels: {
+      'ap-ftc': 'AP — FTC의 조사 확인(영문)',
+      bloomberg: 'Bloomberg — 공식 자료 요구 계획 보도(영문)',
+    },
+  },
   'zcode-git-workspace-uploads': {
     title: 'ZCode 업로드에는 코드뿐 아니라 .git 기록도 들어 있었어요.',
     topic: '코드 보호와 사용자 동의',

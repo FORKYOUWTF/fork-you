@@ -391,6 +391,108 @@ export const sourceLabels: Record<string, string> = {
 };
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  'openai-robinson-safety-resignation': {
+    title:
+      'Un responsabile dei rapporti di sicurezza di OpenAI si dimette e critica la cultura aziendale.',
+    topic: 'Sicurezza e responsabilità',
+    summary:
+      'David Robinson sostiene che il ritmo di OpenAI lasci troppo poco spazio a un lavoro attento sulla sicurezza. OpenAI risponde che rafforza le protezioni e rinvia i modelli quando serve.',
+    status: 'Critica di un ex dipendente e risposta dell’azienda',
+    context: {
+      'What Robinson says': {
+        label: 'Cosa racconta Robinson',
+        text: 'In un articolo del 3 ottobre, Robinson annuncia le dimissioni e spiega che coordinava la scrittura dei rapporti di sicurezza per i lanci. Secondo lui, la corsa continua ostacola i cambiamenti più profondi. Chiede di coinvolgere competenze da settori come l’aviazione e la sicurezza nucleare. È il suo racconto e la sua valutazione della cultura aziendale.',
+      },
+      'OpenAI’s response': {
+        label: 'La risposta di OpenAI',
+        text: 'Il portavoce Drew Pusateri afferma che OpenAI rafforza le protezioni, amplia le valutazioni esterne e sospende l’addestramento o trattiene i modelli quando necessario.',
+      },
+      'A concrete safety decision': {
+        label: 'Una decisione concreta sulla sicurezza',
+        text: 'AP ha riferito il 29 settembre che OpenAI aveva rinviato GPT-6.1 Astra per dubbi sulla sicurezza. È una decisione documentata di rimandare un lancio, ma non dimostra che tutte le protezioni funzionino.',
+      },
+      'What this establishes': {
+        label: 'Cosa possiamo concludere',
+        text: 'L’allarme di un dipendente che lascia l’azienda merita attenzione. Non è una verifica indipendente né la prova che si verificherà una catastrofe prevista. Anche le rassicurazioni dell’azienda non sono una verifica indipendente.',
+      },
+    },
+    ourTake:
+      'I team di sicurezza hanno bisogno di tempo e del potere reale di fermare un lancio. Rapporti pubblici sugli incidenti e controlli indipendenti aiuterebbero a capire se quel potere funziona davvero.',
+    sourceLabels: {
+      robinson:
+        'David Robinson / The Atlantic — Articolo sulle dimissioni (in inglese)',
+      'techcrunch-response':
+        'TechCrunch — Risposta di OpenAI a Robinson (in inglese)',
+      'ap-delay':
+        'AP — OpenAI rinvia un modello per dubbi sulla sicurezza (in inglese)',
+    },
+  },
+  'apple-muse-agent-permissions': {
+    title:
+      'Apple promette più controlli mentre gli agenti IA accedono ai file privati.',
+    topic: 'Privacy e consenso negli agenti IA',
+    summary:
+      'Apple prevede un consenso più esplicito per l’accesso completo al disco. L’annuncio segue un racconto, contestato da Meta, in cui Muse avrebbe letto messaggi privati. Non chiarisce cosa sia successo su quel Mac.',
+    status: 'Annuncio di Apple confermato; racconto su Muse contestato',
+    context: {
+      'What Apple announced': {
+        label: 'Cosa ha annunciato Apple',
+        text: 'Il 2 ottobre Apple ha detto che alcuni sviluppatori usano l’accesso completo al disco in modi che espongono file, posta, messaggi e cronologia senza che gli utenti ne comprendano bene la portata. Ha promesso controlli aggiuntivi che richiedano un’azione esplicita, senza indicare una data. È un cambiamento annunciato, non una correzione già verificata sul tuo Mac.',
+      },
+      'The earlier account': {
+        label: 'Il racconto precedente',
+        text: 'In un articolo del 19 settembre, Jason Aten dice che Muse ha fatto riferimento a conversazioni private in Messages nonostante avesse scelto di non concedere l’accesso. Descrive anche il ritrovamento di un database di messaggi sincronizzato. È la sua esperienza: FORK YOU non l’ha riprodotta.',
+      },
+      'Meta’s response': {
+        label: 'La risposta di Meta',
+        text: 'Meta afferma che Muse può leggere i messaggi solo con l’accesso completo al disco di macOS e il connettore Messages entrambi abilitati. Ars Technica riporta che l’azienda ha ribadito questa posizione alle successive domande.',
+      },
+      'What remains unresolved': {
+        label: 'Cosa resta da chiarire',
+        text: 'L’avvertimento generale di Apple non nomina Muse e non stabilisce quali permessi abbia concesso Aten. Le fonti documentano una disputa sul consenso e una risposta della piattaforma, non un aggiramento dimostrato delle protezioni di macOS.',
+      },
+    },
+    ourTake:
+      'Chiedere aiuto a un’app non dovrebbe costringerti a indovinare quali conversazioni private può leggere. I permessi devono indicare i dati coinvolti e consentire di controllare e revocare l’accesso.',
+    sourceLabels: {
+      apple:
+        'Apple Developer — Modifiche previste all’accesso completo al disco (in inglese)',
+      aten: 'Jason Aten / Inc. — Esperienza diretta con Muse e Messages (in inglese)',
+      ars: 'Ars Technica — Annuncio di Apple e risposta di Meta (in inglese)',
+    },
+  },
+  'ftc-frontier-labs-consumer-investigation': {
+    title: 'La FTC indaga sui rischi delle aziende di IA per i consumatori.',
+    topic: 'Regole e controllo pubblico',
+    summary:
+      'La Federal Trade Commission statunitense (FTC) ha confermato un’indagine che coinvolge OpenAI, Anthropic e altre aziende di IA. Un’indagine non equivale all’accertamento di un illecito.',
+    status: 'Indagine confermata; esito ancora aperto',
+    context: {
+      'What is confirmed': {
+        label: 'Cosa è confermato',
+        text: 'AP ha riferito il 30 settembre che un portavoce della FTC aveva confermato l’indagine sui rischi per i consumatori, senza fornire ulteriori dettagli.',
+      },
+      'What is reportedly being sought': {
+        label: 'Quali informazioni sarebbero richieste',
+        text: 'Bloomberg, citando una fonte anonima, ha riportato che l’agenzia stava preparando richieste formali di informazioni sul rispetto delle leggi a tutela dei consumatori.',
+      },
+      'Company responses': {
+        label: 'Le risposte delle aziende',
+        text: 'AP ha scritto che OpenAI e Anthropic non avevano risposto nell’immediato al momento della pubblicazione, il 30 settembre. Questo non basta a stabilire la loro posizione attuale.',
+      },
+      'What is still unknown': {
+        label: 'Cosa ancora non sappiamo',
+        text: 'Gli articoli citati non stabiliscono l’intera portata dell’indagine, le conclusioni o eventuali sanzioni. I piani per richiedere documenti non vanno confusi con un procedimento sanzionatorio già concluso.',
+      },
+    },
+    ourTake:
+      'Il controllo pubblico dovrebbe verificare le promesse di sicurezza fatte agli utenti. Vale la pena seguire quali prove ottengono gli investigatori, cosa viene reso pubblico e se gli interventi danno alle persone più controllo.',
+    sourceLabels: {
+      'ap-ftc': 'AP — La FTC conferma l’indagine (in inglese)',
+      bloomberg:
+        'Bloomberg — Richieste di informazioni in preparazione (in inglese)',
+    },
+  },
   'zcode-git-workspace-uploads': {
     title: 'ZCode caricava più del codice: c’era anche la cronologia .git.',
     topic: 'Privacy del codice e consenso',

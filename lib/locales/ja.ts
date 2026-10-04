@@ -380,6 +380,103 @@ export const sourceLabels: Record<string, string> = {
 };
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  'openai-robinson-safety-resignation': {
+    title: 'OpenAIの安全報告書を率いた社員が、社内文化を批判して退職。',
+    topic: '安全性と説明責任',
+    summary:
+      'David Robinsonは、OpenAIの開発ペースでは安全性を丁寧に検討する余裕が足りないと訴えています。OpenAIは対策を強化し、必要なときはモデルの公開を見送っていると回答しました。',
+    status: '当事者の批判と会社側の回答',
+    context: {
+      'What Robinson says': {
+        label: 'Robinsonが語ったこと',
+        text: 'Robinsonは10月3日の寄稿で退職を明かし、それまでモデル公開時の安全報告書の執筆を率いていたと説明しました。絶えず開発を急ぐ環境が根本的な改善を難しくしているとし、航空や原子力の安全分野から知見を取り入れるべきだと主張しています。社内文化についての本人の経験と評価です。',
+      },
+      'OpenAI’s response': {
+        label: 'OpenAIの回答',
+        text: '広報担当のDrew Pusateriは、防護策や外部評価を強化し、必要に応じて訓練を中断したり、モデルの公開を見送ったりしていると説明しました。',
+      },
+      'A concrete safety decision': {
+        label: '実際に延期された公開もある',
+        text: 'APは9月29日、OpenAIが安全上の懸念からGPT-6.1 Astraの公開を延期したと報じました。公開を見送った判断は確認できますが、すべての対策が機能している証拠にはなりません。',
+      },
+      'What this establishes': {
+        label: 'ここから何がわかるのか',
+        text: '退職した社員の警告は、きちんと検討する価値があります。ただし、独立した監査結果でも、予測された惨事が必ず起きる証拠でもありません。会社側の安全性の説明も、独立した監査ではありません。',
+      },
+    },
+    ourTake:
+      '安全チームには十分な時間と、公開を止められる実質的な権限が必要です。事故の報告を公開し、独立した検証を受ければ、その権限が実際に働いているかを判断しやすくなります。',
+    sourceLabels: {
+      robinson: 'David Robinson / The Atlantic — 退職理由を述べた寄稿（英語）',
+      'techcrunch-response':
+        'TechCrunch — Robinsonに対するOpenAIの回答（英語）',
+      'ap-delay': 'AP — 安全上の懸念によるOpenAIの公開延期（英語）',
+    },
+  },
+  'apple-muse-agent-permissions': {
+    title:
+      'AIエージェントはどこまで読める？ Appleがアクセス権限の厳格化を予告。',
+    topic: 'エージェントのプライバシーと同意',
+    summary:
+      'Appleは「フルディスクアクセス」の同意手続きを厳しくする計画です。発表に先立ち、MetaのMuseが同意なくメッセージを読んだという訴えがあり、Metaは反論しています。Appleの発表で、そのMacで何が起きたかが確定したわけではありません。',
+    status: 'Appleが変更を予告／Museについては見解が対立',
+    context: {
+      'What Apple announced': {
+        label: 'Appleが発表したこと',
+        text: 'Appleは10月2日、一部の開発者によるフルディスクアクセスの使い方が、利用者の十分な理解がないままファイル、メール、メッセージ、閲覧履歴をさらす恐れがあると説明しました。明示的な操作を求める追加の仕組みを導入するとしていますが、日程は示していません。今後の変更の予告であり、手元のMacで修正済みという意味ではありません。',
+      },
+      'The earlier account': {
+        label: '発端となった体験談',
+        text: 'Jason Atenは9月19日のコラムで、アクセスを許可しないと決めたにもかかわらず、Museが個人的なMessagesの会話に言及したと書いています。メッセージのデータベースが同期された形跡も見つけたとのことです。本人の説明であり、FORK YOUが再現したものではありません。',
+      },
+      'Meta’s response': {
+        label: 'Metaの回答',
+        text: 'Metaは、Museがメッセージを読むにはmacOSのフルディスクアクセスとMessagesコネクターの両方が有効である必要があると説明しています。Ars Technicaによると、追加の質問にも同じ立場を繰り返しました。',
+      },
+      'What remains unresolved': {
+        label: 'まだわからないこと',
+        text: 'Appleの一般的な警告はMuseを名指ししておらず、Atenがどの権限を与えたかも判断していません。資料からわかるのは、同意を巡る見解の対立とプラットフォーム側の対応です。macOSの保護機能を回避したと実証されたわけではありません。',
+      },
+    },
+    ourTake:
+      'アプリに手伝ってもらうために、どの私的な会話まで読まれるかを推測しなければならないのは困ります。権限の説明には対象のデータを明記し、アクセスを確認したり取り消したりできるようにすべきです。',
+    sourceLabels: {
+      apple: 'Apple Developer — フルディスクアクセスの変更計画（英語）',
+      aten: 'Jason Aten / Inc. — MuseとMessagesについての体験談（英語）',
+      ars: 'Ars Technica — Appleの発表とMetaの回答（英語）',
+    },
+  },
+  'ftc-frontier-labs-consumer-investigation': {
+    title: 'FTCがAI企業の消費者リスクを調査。',
+    topic: '規制と公的な監督',
+    summary:
+      '米連邦取引委員会（FTC）は、OpenAIやAnthropicなどのAI企業を対象とする調査を認めました。調査が行われていることと、違法行為が認定されたことは別です。',
+    status: '調査は確認済み／結論は未定',
+    context: {
+      'What is confirmed': {
+        label: '確認されたこと',
+        text: 'APは9月30日、FTCの広報担当者が消費者リスクに関する調査を認めたものの、詳しい説明は控えたと報じました。',
+      },
+      'What is reportedly being sought': {
+        label: '求められると報じられた情報',
+        text: 'Bloombergは匿名の関係者を引用し、FTCが消費者保護法の順守に関する正式な情報提出要求を準備していると報じました。',
+      },
+      'Company responses': {
+        label: '企業の回答は',
+        text: 'APによると、9月30日の掲載時点でOpenAIとAnthropicから直ちに回答はありませんでした。これだけで現在の両社の立場はわかりません。',
+      },
+      'What is still unknown': {
+        label: 'まだ不明な点',
+        text: '引用した報道からは、調査の全容、最終的な判断、罰則は確定できません。資料提出を求める予定という報道を、すでに完了した法執行と混同しないことが大切です。',
+      },
+    },
+    ourTake:
+      '公的な監督では、企業が利用者に伝えている安全性の説明を検証してほしいところです。どんな証拠が集まり、何が公開され、対応策が利用者の選択権を増やすのかに注目したいです。',
+    sourceLabels: {
+      'ap-ftc': 'AP — FTCが調査を認める（英語）',
+      bloomberg: 'Bloomberg — 情報提出要求の準備を報道（英語）',
+    },
+  },
   'zcode-git-workspace-uploads': {
     title: 'ZCodeのアップロードには、コードだけでなく.gitの履歴も。',
     topic: 'コードのプライバシーと同意',
